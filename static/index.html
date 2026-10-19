@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Fruit Store</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍑 Fresh Fruit Store 🍎🍉</h1>
+      <p>Order white peach, red apple, and watermelon online.</p>
+    </header>
+
+    <main>
+      <section class="inventory" aria-label="Current stock">
+        <h2>Current Stock</h2>
+        <div id="stock-list" class="cards"></div>
+      </section>
+
+      <section class="shop" aria-label="Order form">
+        <h2>Your Order</h2>
+        <div id="fruit-inputs"></div>
+
+        <fieldset class="customer">
+          <legend>Customer Information</legend>
+          <label>
+            Full Name
+            <input type="text" id="name" placeholder="Jane Doe" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" id="phone" placeholder="+1 555 123 4567" required />
+          </label>
+          <label>
+            Delivery Address
+            <textarea id="address" rows="3" placeholder="123 Main St, City" required></textarea>
+          </label>
+        </fieldset>
+
+        <div class="summary">
+          <p>Total: <strong id="total">$0.00</strong></p>
+          <p class="limit-note">Each fruit is limited to 20 per customer.</p>
+        </div>
+
+        <button id="place-order" class="primary">Place Order</button>
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="orders" aria-label="Order history">
+        <h2>Order History</h2>
+        <button id="refresh-orders" class="secondary">Refresh Orders</button>
+        <div id="orders-list" class="orders-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with FastAPI + Pydantic</p>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
